@@ -191,14 +191,14 @@ h2 em{font-style:normal;color:transparent;-webkit-text-stroke:1.2px var(--ink)}
 .manifesto .w.hl.on{color:transparent;-webkit-text-stroke:1.4px var(--ink)}
 
 /* stats */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);padding-top:0;padding-bottom:0}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);padding-top:0;padding-bottom:0}
 .stat{padding:48px 24px 48px 0;border-right:1px solid var(--line)}
 .stat:last-child{border-right:0}
 .stat+.stat{padding-left:24px}
 .stat .n{font:900 clamp(48px,7vw,110px)/1 Unbounded;letter-spacing:-.06em}
 .stat .n sup{font-size:.4em;color:var(--volt);vertical-align:top;margin-left:4px}
 .stat .d{color:var(--muted);font-size:14px;margin-top:12px;max-width:220px;line-height:1.5}
-@media(max-width:860px){.stats{grid-template-columns:1fr 1fr}.stat{border-right:0;border-bottom:1px solid var(--line);padding:32px 0 !important}.stat:nth-child(odd){padding-right:16px !important;border-right:1px solid var(--line)}.stat:nth-child(even){padding-left:16px !important}}
+@media(max-width:860px){.stats{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line);padding:28px 0 !important;display:flex;align-items:center;gap:24px}.stat .n{min-width:44%}.stat .d{margin-top:0}}
 
 /* about */
 .about{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(32px,6vw,100px);align-items:center}
@@ -680,8 +680,7 @@ footer a:hover{color:var(--volt)}
 
 <!-- STATS -->
 <section class="stats">
-  <div class="stat rv"><div class="n"><span data-count="300">0</span><sup>+</sup></div><div class="d">Pessoas transformadas, no presencial e no online.</div></div>
-  <div class="stat rv d1"><div class="n"><span data-count="7">0</span><sup>anos</sup></div><div class="d">De experiência em treinamento de força e estética.</div></div>
+  <div class="stat rv"><div class="n"><span data-count="7">0</span><sup>anos</sup></div><div class="d">De experiência em treinamento de força e estética.</div></div>
   <div class="stat rv d2"><div class="n"><span data-count="98">0</span><sup>%</sup></div><div class="d">Dos alunos renovam o acompanhamento.</div></div>
   <div class="stat rv d3"><div class="n"><span data-count="24">0</span><sup>/7</sup></div><div class="d">Suporte direto pelo WhatsApp.</div></div>
 </section>
