@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Simão Rabelo | Personal Trainer</title>
-<meta name="description" content="Simão Rabelo, personal trainer. Treinamento de alta performance, hipertrofia, emagrecimento e consultoria online.">
+<meta name="description" content="Simão Rabelo, personal trainer em Boa Vista – RR e especialista em resultados. Hipertrofia, performance, reabilitação física e consultoria online para atletas e público geral.">
 <link rel="icon" type="image/png" href="img/logo/favicon.png">
 <link rel="apple-touch-icon" href="img/logo/favicon.png">
 <meta name="theme-color" content="#000000">
@@ -199,8 +199,8 @@ h2 em{font-style:normal;color:transparent;-webkit-text-stroke:1.2px var(--ink)}
 /* about */
 .about{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(32px,6vw,100px);align-items:center}
 .about-img{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:4/5}
-.about-img img{width:100%;height:120%;object-fit:cover;object-position:center 30%;filter:grayscale(1) contrast(1.1);transition:filter .8s var(--ease)}
-.about-img:hover img{filter:grayscale(0) contrast(1.05)}
+.about-img img{width:100%;height:120%;object-fit:cover;object-position:center 30%;transition:transform 1.4s var(--ease)}
+.about-img:hover img{transform:scale(1.03)}
 .about-img .stamp{position:absolute;top:20px;left:20px;padding:8px 14px;border-radius:100px;background:rgba(0,0,0,.5);backdrop-filter:blur(10px);font:500 11px 'JetBrains Mono',monospace;letter-spacing:.12em;text-transform:uppercase}
 .about-txt p{color:var(--muted);font-size:clamp(16px,1.3vw,19px);line-height:1.7;margin-top:28px;max-width:560px}
 .about-txt p strong{color:var(--ink);font-weight:500}
@@ -208,6 +208,28 @@ h2 em{font-style:normal;color:transparent;-webkit-text-stroke:1.2px var(--ink)}
 .pills span{padding:10px 18px;border:1px solid var(--line);border-radius:100px;font-size:13px;color:var(--ink);transition:background .3s,color .3s,border-color .3s}
 .pills span:hover{background:var(--volt);color:#000;border-color:var(--volt)}
 @media(max-width:860px){.about{grid-template-columns:1fr}}
+.inline-link{color:var(--ink);border-bottom:1px solid currentColor;transition:opacity .3s}
+.inline-link:hover{opacity:.7}
+
+/* diferenciais */
+.why{padding-top:0}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.why-card{position:relative;border:1px solid var(--line);border-radius:24px;background:var(--bg-2);padding:32px 30px;min-height:280px;display:flex;flex-direction:column;justify-content:space-between;gap:40px;overflow:hidden;transition:border-color .4s,transform .6s var(--ease)}
+.why-card.wide{grid-column:span 2}
+.why-card:hover{border-color:rgba(255,255,255,.4);transform:translateY(-6px)}
+.why-card::after{content:"";position:absolute;right:-80px;bottom:-80px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.07),transparent 70%);pointer-events:none}
+.why-n{font:500 12px 'JetBrains Mono',monospace;letter-spacing:.15em;color:var(--muted)}
+.why-card h3{font:700 clamp(22px,2.2vw,32px)/1.05 Unbounded;letter-spacing:-.04em;margin-bottom:14px;max-width:560px}
+.why-card p{color:var(--muted);line-height:1.65;max-width:560px}
+.why-strip{display:grid;grid-template-columns:repeat(3,1fr);margin-top:16px;border:1px solid var(--line);border-radius:24px;overflow:hidden}
+.why-strip>*{display:flex;flex-direction:column;gap:6px;padding:24px 28px;position:relative}
+.why-strip>*+*{border-left:1px solid var(--line)}
+.why-strip small{font:500 11px 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.why-strip strong{font:700 17px Unbounded;letter-spacing:-.03em}
+.why-strip a svg{position:absolute;right:24px;top:50%;margin-top:-7px;transition:transform .4s var(--ease)}
+.why-strip a:hover svg{transform:rotate(-45deg)}
+.why-strip a:hover{background:rgba(255,255,255,.04)}
+@media(max-width:900px){.why-grid{grid-template-columns:1fr}.why-card.wide{grid-column:auto}.why-card{min-height:0}.why-strip{grid-template-columns:1fr}.why-strip>*+*{border-left:0;border-top:1px solid var(--line)}}
 
 /* method */
 .method-head{display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap;margin-bottom:64px}
@@ -523,12 +545,61 @@ footer a:hover{color:var(--volt)}
     <div class="about-txt">
       <div class="eyebrow rv">Quem é o Simão</div>
       <h2 class="rv d1">Ciência,<br>disciplina e <em>resultado.</em></h2>
-      <p class="rv d2">Sou <strong>Simão Rabelo</strong>, personal trainer especializado em <strong>transformação física</strong>. Meu trabalho une ciência do treinamento, estratégia nutricional e acompanhamento próximo para que você chegue ao seu melhor shape sem atalhos.</p>
-      <p class="rv d3">Aqui não existe treino genérico. Cada aluno recebe um plano construído para o seu corpo, sua rotina e o seu objetivo.</p>
+      <p class="rv d2">Sou <strong>Simão Rabelo</strong>, personal trainer em <strong>Boa Vista, Roraima</strong>, e especialista em resultados. Meu trabalho vai além da estética de academia: alinho <strong>ganho de massa e performance</strong> com cuidados de <strong>reabilitação física, estabilidade muscular e controle articular</strong>.</p>
+      <p class="rv d3">Trabalho em parceria com <strong>fisioterapeutas e médicos integrativos</strong> e, pela consultoria online da <a class="inline-link" href="https://www.instagram.com/spsquad_ofc/" target="_blank" rel="noopener">@spsquad_ofc</a>, acompanho de atletas de alto rendimento a quem quer sair do sedentarismo com segurança.</p>
       <div class="pills rv d3">
-        <span>Hipertrofia</span><span>Emagrecimento</span><span>Recomposição corporal</span><span>Força</span><span>Consultoria online</span>
+        <span>Hipertrofia</span><span>Performance</span><span>Reabilitação física</span><span>Controle articular</span><span>Emagrecimento</span><span>Saúde</span><span>Consultoria online</span>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section id="diferenciais" class="why">
+  <div class="method-head">
+    <div>
+      <div class="eyebrow rv">Por que o Simão</div>
+      <h2 class="rv d1">Treino que<br>respeita <em>o corpo.</em></h2>
+    </div>
+    <p class="rv d2">O que faz alunos e atletas confiarem a evolução deles ao Simão.</p>
+  </div>
+  <div class="why-grid">
+    <article class="why-card wide rv">
+      <span class="why-n">01</span>
+      <div>
+        <h3>Abordagem científica e integrativa</h3>
+        <p>Não foca só na estética padrão de academia. O treino é integrado ao cuidado com reabilitação física e controle articular, em conjunto com médicos e fisioterapeutas.</p>
+      </div>
+    </article>
+    <article class="why-card rv d1">
+      <span class="why-n">02</span>
+      <div>
+        <h3>Resultados reais, sem milagres</h3>
+        <p>Evolução de médio a longo prazo, com consistência técnica. Nada de promessas de resultado rápido.</p>
+      </div>
+    </article>
+    <article class="why-card rv">
+      <span class="why-n">03</span>
+      <div>
+        <h3>Do sedentário ao atleta</h3>
+        <p>Atende tanto atletas de alto rendimento em busca de máxima performance quanto quem quer sair do sedentarismo com segurança.</p>
+      </div>
+    </article>
+    <article class="why-card wide rv d1">
+      <span class="why-n">04</span>
+      <div>
+        <h3>Equipe multidisciplinar</h3>
+        <p>Ganho de massa e performance com estabilidade muscular e saúde articular. Quando precisa, o trabalho é feito lado a lado com fisioterapeutas e médicos integrativos.</p>
+      </div>
+    </article>
+  </div>
+  <div class="why-strip rv">
+    <a href="https://www.instagram.com/spsquad_ofc/" target="_blank" rel="noopener">
+      <small>Consultoria online</small><strong>@spsquad_ofc</strong>
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 13L13 1M13 1H3M13 1V11" stroke="currentColor" stroke-width="1.6"/></svg>
+    </a>
+    <div><small>Na mídia</small><strong>Convidado do PodFalar Roraima</strong></div>
+    <div><small>Atuação</small><strong>Boa Vista · Roraima</strong></div>
   </div>
 </section>
 
