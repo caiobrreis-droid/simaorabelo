@@ -57,18 +57,15 @@ a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
 ::selection{background:var(--volt);color:#000}
 
-/* grain */
 body::after{content:"";position:fixed;inset:-50%;pointer-events:none;z-index:999;opacity:.06;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   animation:grain 1s steps(4) infinite}
 @keyframes grain{0%{transform:translate(0,0)}25%{transform:translate(-3%,2%)}50%{transform:translate(2%,-3%)}75%{transform:translate(-2%,-1%)}}
 
-/* cursor */
 .cursor{position:fixed;top:0;left:0;width:44px;height:44px;border:1px solid var(--volt);border-radius:50%;pointer-events:none;z-index:1000;transform:translate(-50%,-50%);transition:width .35s var(--ease),height .35s var(--ease),background .35s;mix-blend-mode:difference}
 .cursor.big{width:110px;height:110px;background:var(--volt)}
 .cursor-dot{position:fixed;top:0;left:0;width:5px;height:5px;background:var(--volt);border-radius:50%;pointer-events:none;z-index:1001;transform:translate(-50%,-50%)}
 
-/* preloader */
 .loader{position:fixed;inset:0;background:var(--bg);z-index:2000;display:flex;flex-direction:column;justify-content:space-between;padding:32px clamp(16px,4vw,48px);transition:clip-path 1.1s var(--ease);clip-path:inset(0 0 0 0)}
 .loader.done{clip-path:inset(0 0 100% 0)}
 .loader-top{display:flex;justify-content:space-between;font:500 12px 'JetBrains Mono',monospace;letter-spacing:.15em;color:var(--muted);text-transform:uppercase}
@@ -77,7 +74,6 @@ body::after{content:"";position:fixed;inset:-50%;pointer-events:none;z-index:999
 .loader-bar{height:2px;background:var(--line);position:relative;overflow:hidden}
 .loader-bar i{position:absolute;inset:0;background:var(--volt);transform-origin:left;transform:scaleX(0)}
 
-/* nav */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px clamp(16px,4vw,48px);transition:background .4s,backdrop-filter .4s,padding .4s}
 nav.scrolled{background:rgba(7,8,10,.6);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);padding-top:14px;padding-bottom:14px;border-bottom:1px solid var(--line)}
 .logo{display:flex;align-items:center;color:var(--ink);transition:color .3s}
@@ -110,7 +106,6 @@ nav.scrolled{background:rgba(7,8,10,.6);backdrop-filter:blur(18px);-webkit-backd
 @media(max-width:1180px){.nav-links{gap:22px;font-size:12px}}
 @media(max-width:1020px){.nav-links{display:none}.nav .btn{padding:12px 18px}}
 
-/* hero */
 .hero{position:relative;min-height:100svh;display:grid;place-items:center;overflow:hidden;padding:110px clamp(16px,4vw,48px) 40px}
 .hero-bg{position:absolute;inset:0;background:
   radial-gradient(60% 50% at 50% 55%,rgba(255,255,255,.09),transparent 70%),
@@ -170,27 +165,23 @@ nav.scrolled{background:rgba(7,8,10,.6);backdrop-filter:blur(18px);-webkit-backd
   .hero-foot .hide-m{display:none}
 }
 
-/* marquee */
 .marquee{border-block:1px solid var(--line);background:var(--volt);color:#000;overflow:hidden;transform:rotate(-2deg) scale(1.04);margin:60px 0}
 .marquee-track{display:flex;width:max-content;animation:marq 28s linear infinite}
 .marquee-track span{font:900 clamp(28px,5vw,64px) Unbounded;letter-spacing:-.04em;padding:18px 28px;display:flex;align-items:center;gap:56px;white-space:nowrap;text-transform:uppercase}
 .marquee-track span::after{content:"✦";font-size:.6em}
 @keyframes marq{to{transform:translateX(-50%)}}
 
-/* sections */
 section{position:relative;padding:clamp(80px,12vw,160px) clamp(16px,4vw,48px)}
 .eyebrow{font:500 12px 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--volt);display:flex;align-items:center;gap:12px;margin-bottom:28px}
 .eyebrow::before{content:"";width:28px;height:1px;background:currentColor}
 h2{font:700 clamp(36px,6.4vw,96px)/.95 Unbounded,sans-serif;letter-spacing:-.05em}
 h2 em{font-style:normal;color:transparent;-webkit-text-stroke:1.2px var(--ink)}
 
-/* manifesto */
 .manifesto p{font:500 clamp(26px,4.2vw,62px)/1.12 Unbounded;letter-spacing:-.04em;max-width:1300px}
 .manifesto .w{color:rgba(245,245,245,.13);transition:color .4s}
 .manifesto .w.on{color:var(--ink)}
 .manifesto .w.hl.on{color:transparent;-webkit-text-stroke:1.4px var(--ink)}
 
-/* stats */
 .stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);padding-top:0;padding-bottom:0}
 .stat{padding:48px 24px 48px 0;border-right:1px solid var(--line)}
 .stat:last-child{border-right:0}
@@ -200,7 +191,6 @@ h2 em{font-style:normal;color:transparent;-webkit-text-stroke:1.2px var(--ink)}
 .stat .d{color:var(--muted);font-size:14px;margin-top:12px;max-width:220px;line-height:1.5}
 @media(max-width:860px){.stats{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line);padding:28px 0 !important;display:flex;align-items:center;gap:24px}.stat .n{min-width:44%}.stat .d{margin-top:0}}
 
-/* about */
 .about{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(32px,6vw,100px);align-items:center}
 .about-img{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:4/5}
 .about-img img{width:100%;height:120%;object-fit:cover;object-position:center 30%;transition:transform 1.4s var(--ease)}
@@ -215,7 +205,6 @@ h2 em{font-style:normal;color:transparent;-webkit-text-stroke:1.2px var(--ink)}
 .inline-link{color:var(--ink);border-bottom:1px solid currentColor;transition:opacity .3s}
 .inline-link:hover{opacity:.7}
 
-/* diferenciais */
 .why{padding-top:0}
 .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .why-card{position:relative;border:1px solid var(--line);border-radius:24px;background:var(--bg-2);padding:32px 30px;min-height:280px;display:flex;flex-direction:column;justify-content:space-between;gap:40px;overflow:hidden;transition:border-color .4s,transform .6s var(--ease)}
@@ -235,7 +224,6 @@ h2 em{font-style:normal;color:transparent;-webkit-text-stroke:1.2px var(--ink)}
 .why-strip a:hover{background:rgba(255,255,255,.04)}
 @media(max-width:900px){.why-grid{grid-template-columns:1fr}.why-card.wide{grid-column:auto}.why-card{min-height:0}.why-strip{grid-template-columns:1fr}.why-strip>*+*{border-left:0;border-top:1px solid var(--line)}}
 
-/* method */
 .method-head{display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap;margin-bottom:64px}
 .method-head p{color:var(--muted);max-width:380px;line-height:1.6}
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
@@ -250,7 +238,6 @@ h2 em{font-style:normal;color:transparent;-webkit-text-stroke:1.2px var(--ink)}
 @media(max-width:1000px){.steps{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.steps{grid-template-columns:1fr}.step{min-height:260px}}
 
-/* services */
 .services{background:var(--bg);color:var(--ink);border-top:1px solid var(--line)}
 .svc-list{margin-top:64px;border-top:1px solid var(--line)}
 .svc{display:grid;grid-template-columns:80px 1fr 1fr auto;gap:24px;align-items:center;padding:36px 0;border-bottom:1px solid var(--line);position:relative;overflow:hidden;transition:padding .5s var(--ease)}
@@ -266,7 +253,6 @@ h2 em{font-style:normal;color:transparent;-webkit-text-stroke:1.2px var(--ink)}
 .svc:hover .arrow{background:#000;color:#fff;border-color:#000;transform:rotate(-45deg)}
 @media(max-width:860px){.svc{grid-template-columns:1fr auto;gap:12px}.svc-n{grid-column:1/-1}.svc p{grid-column:1/-1;order:3}}
 
-/* pricing */
 .pricing{background:var(--bg);color:var(--ink);padding-top:clamp(40px,6vw,80px)}
 .price-head{display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap;margin-bottom:48px}
 .tabs{display:inline-flex;padding:6px;border-radius:100px;background:var(--bg-2);border:1px solid var(--line);position:relative}
@@ -319,7 +305,6 @@ h2 em{font-style:normal;color:transparent;-webkit-text-stroke:1.2px var(--ink)}
 @media(max-width:960px){.cards{grid-template-columns:1fr}.card{min-height:0}.cards.two{grid-template-columns:1fr}}
 @media(max-width:520px){.tabs{width:100%}.tabs button{flex:1;padding:14px 10px;font-size:11px}}
 
-/* testimonials placeholder */
 .results{background:var(--bg);color:var(--ink);padding-top:0}
 .results-inner{background:var(--bg-2);border:1px solid var(--line);color:var(--ink);border-radius:40px;padding:clamp(48px,7vw,100px) clamp(20px,4vw,64px)}
 .res-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap}
@@ -354,7 +339,6 @@ h2 em{font-style:normal;color:transparent;-webkit-text-stroke:1.2px var(--ink)}
 @media(hover:none){.ba input{cursor:auto}}
 @media(max-width:760px){.gallery{grid-template-columns:1fr 1fr;gap:10px}.ba{border-radius:16px}.ba .knob{width:38px;height:38px;margin:-19px 0 0 -19px}.ba .chip{top:10px;left:10px;font-size:9px;padding:6px 9px}.ba .lb{font-size:10px;bottom:12px}.ba .lb.l{left:10px}.ba .lb.r{right:10px}}
 
-/* performance */
 .stage{position:relative;overflow:hidden;background:
   radial-gradient(50% 60% at 25% -10%,rgba(255,255,255,.10),transparent 70%),
   radial-gradient(40% 50% at 85% -10%,rgba(255,255,255,.06),transparent 70%),var(--bg) !important}
@@ -388,7 +372,6 @@ h2 em{font-style:normal;color:transparent;-webkit-text-stroke:1.2px var(--ink)}
 }
 @media(max-width:760px){.perf-grid{gap:10px}}
 
-/* cta */
 .cta{position:relative;isolation:isolate;text-align:center;overflow:hidden;min-height:92svh;display:flex;flex-direction:column;justify-content:center;padding-top:clamp(120px,14vw,200px);padding-bottom:clamp(120px,14vw,200px)}
 .cta::before{content:"";position:absolute;inset:0;z-index:-2;background:url(img/trabalho.jpg) center 35%/cover no-repeat;filter:grayscale(1) contrast(1.05);transform:scale(1.04)}
 .cta::after{content:"";position:absolute;inset:0;z-index:-1;background:
@@ -402,7 +385,6 @@ h2 em{font-style:normal;color:transparent;-webkit-text-stroke:1.2px var(--ink)}
 .cta-btns{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
 .magnetic{transition:transform .5s var(--ease)}
 
-/* local */
 .local{display:grid;grid-template-columns:1fr 1.35fr;gap:16px;padding-top:0}
 .local-info{border:1px solid var(--line);border-radius:28px;padding:clamp(28px,4vw,52px);display:flex;flex-direction:column;gap:28px;background:var(--bg-2)}
 .local-info h2{font-size:clamp(34px,4.6vw,68px)}
@@ -422,7 +404,6 @@ h2 em{font-style:normal;color:transparent;-webkit-text-stroke:1.2px var(--ink)}
 @media(max-width:900px){.local{grid-template-columns:1fr}.map{min-height:360px}}
 @media(max-width:760px){footer{padding-bottom:110px}}
 
-/* whatsapp flutuante */
 .wa-float{position:fixed;right:clamp(16px,3vw,32px);bottom:clamp(16px,3vw,32px);z-index:90;width:60px;height:60px;border-radius:50%;background:var(--volt);color:#000;display:grid;place-items:center;box-shadow:0 14px 40px rgba(0,0,0,.45);transform:translateY(120px) scale(.8);opacity:0;transition:transform .6s var(--ease),opacity .4s}
 .wa-float.show{transform:none;opacity:1}
 .wa-float:hover{transform:scale(1.08)}
@@ -433,7 +414,6 @@ footer{padding:40px clamp(16px,4vw,48px);border-top:1px solid var(--line);displa
 footer a:hover{color:var(--volt)}
 .socials{display:flex;gap:24px}
 
-/* reveal */
 .rv{opacity:0;transform:translateY(60px);transition:opacity 1.2s var(--ease),transform 1.2s var(--ease)}
 .rv.in{opacity:1;transform:none}
 .rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}
@@ -450,7 +430,6 @@ footer a:hover{color:var(--volt)}
 <div class="cursor" id="cursor"></div>
 <div class="cursor-dot" id="cursorDot"></div>
 
-<!-- PRELOADER -->
 <div class="loader" id="loader">
   <div class="loader-top"><span>Personal Trainer</span><span>Especialista em resultados</span></div>
   <div class="loader-logo" role="img" aria-label="Simão Rabelo, Personal Trainer">
@@ -463,7 +442,6 @@ footer a:hover{color:var(--volt)}
   </div>
 </div>
 
-<!-- NAV -->
 <nav id="nav" class="nav">
   <a href="#top" class="logo" aria-label="Simão Rabelo, voltar ao início"><svg viewBox="0 0 3748 350" aria-hidden="true"><use href="#lg"/></svg></a>
   <div class="nav-links">
@@ -479,7 +457,6 @@ footer a:hover{color:var(--volt)}
   </a>
 </nav>
 
-<!-- HERO -->
 <header class="hero" id="top">
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
@@ -518,7 +495,6 @@ footer a:hover{color:var(--volt)}
   </div>
 </header>
 
-<!-- MARQUEE -->
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
     <span>Hipertrofia</span><span>Emagrecimento</span><span>Performance</span><span>Consultoria Online</span><span>Disciplina</span>
@@ -526,7 +502,6 @@ footer a:hover{color:var(--volt)}
   </div>
 </div>
 
-<!-- PRICING -->
 <section class="pricing" id="planos">
   <div class="price-head">
     <div>
@@ -540,7 +515,6 @@ footer a:hover{color:var(--volt)}
     </div>
   </div>
 
-  <!-- Consultoria -->
   <div class="panel show" id="p-online" role="tabpanel" aria-labelledby="tab-online">
     <div class="cards">
       <article class="card">
@@ -576,7 +550,6 @@ footer a:hover{color:var(--volt)}
     </div>
   </div>
 
-  <!-- Personal -->
   <div class="panel" id="p-personal" role="tabpanel" aria-labelledby="tab-personal">
     <div class="sub-tabs" aria-label="Modalidade">
       <button type="button" data-mode="ind" aria-pressed="true">Individual</button>
@@ -611,7 +584,6 @@ footer a:hover{color:var(--volt)}
   </div>
 </section>
 
-<!-- RESULTS -->
 <section class="results" id="resultados">
   <div class="results-inner">
     <div class="res-head">
@@ -631,12 +603,10 @@ footer a:hover{color:var(--volt)}
       <button type="button" data-filter="saude" aria-pressed="false">Saúde <i></i></button>
     </div>
     <div class="gallery" id="gallery">
-      <!-- r1..r10 gerados abaixo via JS -->
     </div>
   </div>
 </section>
 
-<!-- PERFORMANCE -->
 <section class="results" id="performance">
   <div class="results-inner stage">
     <span class="stage-word" aria-hidden="true">PALCO</span>
@@ -661,7 +631,6 @@ footer a:hover{color:var(--volt)}
         </span>
         <figcaption class="cap"><span>No palco</span><strong>Simão com seus atletas campeões</strong></figcaption>
       </figure>
-      <!-- r7, r8 gerados via JS -->
       <div class="perf-quote rv">
         <h3>Shape de <em>palco</em><br>se constrói nos detalhes.</h3>
         <div class="row">
@@ -678,14 +647,12 @@ footer a:hover{color:var(--volt)}
   </div>
 </section>
 
-<!-- STATS -->
 <section class="stats">
   <div class="stat rv"><div class="n"><span data-count="7">0</span><sup>anos</sup></div><div class="d">De experiência em treinamento de força e estética.</div></div>
   <div class="stat rv d2"><div class="n"><span data-count="98">0</span><sup>%</sup></div><div class="d">Dos alunos renovam o acompanhamento.</div></div>
   <div class="stat rv d3"><div class="n"><span data-count="24">0</span><sup>/7</sup></div><div class="d">Suporte direto pelo WhatsApp.</div></div>
 </section>
 
-<!-- SERVICES -->
 <section class="services" id="servicos">
   <div class="eyebrow rv">Serviços</div>
   <h2 class="rv d1">Escolha como<br>quer <em>evoluir.</em></h2>
@@ -696,7 +663,6 @@ footer a:hover{color:var(--volt)}
   </div>
 </section>
 
-<!-- METHOD -->
 <section id="metodo">
   <div class="method-head">
     <div>
@@ -713,13 +679,11 @@ footer a:hover{color:var(--volt)}
   </div>
 </section>
 
-<!-- MANIFESTO -->
 <section class="manifesto">
   <div class="eyebrow">Manifesto</div>
   <p id="manifesto">Não é sobre treinar mais. É sobre treinar *certo.* Cada série, cada carga, cada refeição tem um *propósito.* Seu corpo é o projeto, e eu sou o *arquiteto.*</p>
 </section>
 
-<!-- ABOUT -->
 <section id="sobre">
   <div class="about">
     <div class="about-img rv">
@@ -739,7 +703,6 @@ footer a:hover{color:var(--volt)}
   </div>
 </section>
 
-<!-- DIFERENCIAIS -->
 <section id="diferenciais" class="why">
   <div class="method-head">
     <div>
@@ -788,7 +751,6 @@ footer a:hover{color:var(--volt)}
   </div>
 </section>
 
-<!-- CTA -->
 <section class="cta" id="contato">
   <div class="eyebrow rv" style="justify-content:center">Próximo passo</div>
   <h2 class="rv d1"><span>Não tem segredo,</span><span class="v">tem trabalho!</span></h2>
@@ -801,7 +763,6 @@ footer a:hover{color:var(--volt)}
   </div>
 </section>
 
-<!-- LOCAL -->
 <section class="local" id="local">
   <div class="local-info rv">
     <div>
@@ -852,8 +813,6 @@ footer a:hover{color:var(--volt)}
 (() => {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Galeria antes/depois
-  // [arquivo rN, etiqueta, descrição (alt), grupo]
   const RESULTS = [
     [1, 'Hipertrofia', 'Aluna 1', 'geral'],
     [2, 'Emagrecimento', 'Aluno 2', 'geral'],
@@ -901,7 +860,6 @@ footer a:hover{color:var(--volt)}
     inp.addEventListener('input', () => set(inp.value));
     inp.addEventListener('pointerdown', () => ba.classList.add('drag'));
     addEventListener('pointerup', () => ba.classList.remove('drag'));
-    // varredura de demonstração quando aparece na tela
     if (!reduce) new IntersectionObserver((es, o) => es.forEach(e => {
       if (!e.isIntersecting) return; o.disconnect();
       const t0 = performance.now() + 500 + [...ba.parentNode.children].indexOf(ba) * 120;
@@ -917,7 +875,6 @@ footer a:hover{color:var(--volt)}
     inp.addEventListener('pointerdown', () => inp.dataset.touched = 1, {once:true});
   });
 
-  // Preloader
   const loader = document.getElementById('loader'), num = document.getElementById('loadNum'), bar = document.getElementById('loadBar'), loadLogo = document.getElementById('loadLogo');
   let p = 0, t0;
   const tick = now => {
@@ -933,7 +890,6 @@ footer a:hover{color:var(--volt)}
   const start = () => requestAnimationFrame(tick);
   start();
 
-  // Cursor
   const c = document.getElementById('cursor'), d = document.getElementById('cursorDot');
   let mx = innerWidth/2, my = innerHeight/2, cx = mx, cy = my;
   addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; d.style.transform = `translate(${mx}px,${my}px) translate(-50%,-50%)`; });
@@ -943,7 +899,6 @@ footer a:hover{color:var(--volt)}
     el.addEventListener('mouseleave', () => c.classList.remove('big'));
   });
 
-  // Nav
   const nav = document.getElementById('nav');
   const waF = document.getElementById('waFloat');
   addEventListener('scroll', () => {
@@ -951,7 +906,6 @@ footer a:hover{color:var(--volt)}
     waF.classList.toggle('show', scrollY > innerHeight * .8);
   }, {passive:true});
 
-  // Hero 3D tilt + name parallax
   const hero = document.querySelector('.hero'), photo = document.getElementById('heroPhoto'), name = document.getElementById('heroName');
   if (!reduce) hero.addEventListener('mousemove', e => {
     const r = hero.getBoundingClientRect();
@@ -960,7 +914,6 @@ footer a:hover{color:var(--volt)}
     name.style.transform = `translate(${x*-40}px,${y*-24}px)`;
   });
 
-  // Scroll parallax
   const par = document.querySelectorAll('[data-parallax]');
   const heroImg = photo.querySelector('img');
   const onScroll = () => {
@@ -974,7 +927,6 @@ footer a:hover{color:var(--volt)}
   };
   addEventListener('scroll', onScroll, {passive:true});
 
-  // Reveal
   const io = new IntersectionObserver(es => es.forEach(e => {
     if (e.isIntersecting) {
       e.target.classList.add('in');
@@ -985,7 +937,6 @@ footer a:hover{color:var(--volt)}
   }), {threshold:.15});
   document.querySelectorAll('.rv').forEach(el => io.observe(el));
 
-  // Counters
   function runCounters(list){
     list.forEach(el => {
       if (el.dataset.done) return; el.dataset.done = 1;
@@ -999,7 +950,6 @@ footer a:hover{color:var(--volt)}
     });
   }
 
-  // Manifesto word-by-word scroll highlight
   const m = document.getElementById('manifesto');
   m.innerHTML = m.textContent.trim().split(/\s+/).map(w => {
     const hl = w.startsWith('*');
@@ -1014,14 +964,12 @@ footer a:hover{color:var(--volt)}
   };
   addEventListener('scroll', manifestoScroll, {passive:true}); manifestoScroll();
 
-  // Spotlight on steps
   document.querySelectorAll('.step').forEach(s => s.addEventListener('mousemove', e => {
     const r = s.getBoundingClientRect();
     s.style.setProperty('--mx', (e.clientX - r.left) + 'px');
     s.style.setProperty('--my', (e.clientY - r.top) + 'px');
   }));
 
-  // Pricing tabs
   const WA = 'https://wa.me/5595991670742?text=';
   const tabs = [...document.querySelectorAll('.tabs [role=tab]')], pill = document.querySelector('.tabs .pill');
   const placePill = () => {
@@ -1041,7 +989,6 @@ footer a:hover{color:var(--volt)}
   addEventListener('resize', placePill); document.fonts?.ready.then(placePill); placePill();
   document.querySelectorAll('[data-goto]').forEach(a => a.addEventListener('click', () => selectTab(a.dataset.goto)));
 
-  // Individual / Dupla
   const modeBtns = document.querySelectorAll('[data-mode]');
   const setMode = m => {
     modeBtns.forEach(b => b.setAttribute('aria-pressed', b.dataset.mode === m));
@@ -1055,7 +1002,6 @@ footer a:hover{color:var(--volt)}
   modeBtns.forEach(b => b.addEventListener('click', () => setMode(b.dataset.mode)));
   setMode('ind');
 
-  // Magnetic buttons
   document.querySelectorAll('.magnetic').forEach(b => {
     b.addEventListener('mousemove', e => {
       const r = b.getBoundingClientRect();
